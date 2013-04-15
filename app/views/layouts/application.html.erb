@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project03</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+ 	<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" %>
+	 <link rel="stylesheet" href="/FortAwesome-Font-Awesome-13d5dd3/css/font-awesome.min.css">
+</head>
+<body>
+	<p id="notice" style="color:red"><%= flash[:notice] %></p>
+
+<%= yield %>
+</body>
+</html>

@@ -1,0 +1,9 @@
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <ul>
+    <% @benhnhans.each do |benhnhan| %>
+  <li><%= link_to benhnhan.title, 
+    :action => 'show', :id =benhnhan.id  %></li>
+  <% end %>
+  </ul>>
+  
+  <%= render :partial => 'list'%>

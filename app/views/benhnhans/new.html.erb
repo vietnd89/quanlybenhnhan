@@ -1,0 +1,18 @@
+<div style="margin-left: 500px">
+<%= form_for @benhnhan ,:url => "/benhnhans/#{@benhnhan.id}/create",:method => 'post' do |f| %>
+ <div> 
+  <p style="display: inline-block"><%= f.label :ten_benh_nhan %></p>
+  <%= f.text_field :ten_benh_nhan %><br />
+	</div>
+  <p style="display: inline-block"><%= f.label :dia_chi %></p>
+  <%= f.text_field :dia_chi %><br />
+
+  <p style="display: inline-block"><%= f.label :so_dien_thoai %> </p>
+  <%= f.text_field :so_dien_thoai %><br />
+   
+  <p style="display: inline-block"><%= f.label :benh_an %></p>
+  <%= f.text_area :benh_an %><br />
+  
+  <%= f.submit %>
+<% end %>
+</div>

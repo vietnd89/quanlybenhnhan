@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="navbar-inner">
+  <ul class="nav nav-pills "style="margin-top: 18px !important">
+    <li><a href="#" class="active" title="Trang chủ">Trang chủ</a>
+    </li>
+    <li><a href="#" title="Giới thiệu">Giới thiệu</a></li>
+    <li><a href="#" title="liên hệ">Liên hệ</a></li>
+    <li><a href="benhnhans/new" title="Tạo mới bênh nhân">Tạo mới bệnh nhân</a></li>
+  </ul>
+  </div>
+<h1 style="font-family: Times New Roman">Tra cứu bệnh nhân</h1>
+<%= form_tag @benhnhans_path,:method => 'get',:id =>'search_bn',:class => 'form-search' do %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Search", :ten_benh_nhan => nil,:class => 'btn' %>
+<div id="refresh_bn"><%= render 'list'%></div>
+<% end %>
+
+</div>
+<script>
+	$(function() {
+ $("#search_bn input").keyup(function() {
+         $.get($("#search_bn").attr("action"), $("#search_bn").serialize(), null, "script");
+         return false;
+    });
+});
+</script>>
