@@ -1,5 +1,5 @@
 <div class="btn" style="float: right">
-	<%= link_to "Tạo mới bệnh nhân", :controller => "benhnhans", :action => "new"%>
+	<a href="/benhnhans/new"><%= t('add_more_patient')%></a>
 </div>
 <% unless @benhnhans%>
 <div>
@@ -8,31 +8,29 @@
 <%else%>
 <table class="table table-hover">
 	<tr >
-		<th>Số thứ tự</th>
-		<th> Tên bệnh nhân </th>
-		<th> Địa chỉ </th>
-		<th> Số điện thoại </th>
-		<th> Bệnh án </th>
-		<th colspan="2">Chỉnh sửa</th>
-		
+		<th><%= t ('numbers')%></th>
+		<th> <%= t ('name')%> </th>
+		<th> <%= t ('address')%></th>
+		<th><%= t ('phone_number')%> </th>
+		<th> <%= t ('disease')%> </th>
+		<th colspan="2"><%= t ('edit')%></th>
+
 	</tr>
 
 	<% @benhnhans.each do |benhnhans|%>
 	<tr class="success">
-    <td> <%=benhnhans.id%> </td>
+		<td> <%= benhnhans.id%> </td>
 		<td> <%= benhnhans.ten_benh_nhan%> </td>
-		<td> <%= benhnhans.dia_chi%>  </td/>
-	  <td> <%= benhnhans.so_dien_thoai%> </td>
+		<td> <%= benhnhans.dia_chi%>  </td/> <td> <%= benhnhans.so_dien_thoai%> </td>
 		<td> <%= benhnhans.benh_an%> </td>
 		<td><a href="/benhnhans/edit/<%= benhnhans.id%>"><i class="icon-pencil"></i></a></td>
 		<td class="close_bn"><a href="/benhnhans/delete/<%= benhnhans.id%>"><i class="icon-trash"></i></a></td>
-
 	</tr>
 	<%end%>
-
 </table>
-
 <%end%>
+
+<!-- delete  -->
 <script>
 	$('.close_bn').click(function() {
 		var del = confirm("có muốn xóa không em?")

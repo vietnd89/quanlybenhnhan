@@ -2,7 +2,6 @@
     attr_accessible :ten_benh_nhan, :so_dien_thoai, :dia_chi, :benh_an
     
     def self.search(search)
-      Rails.logger.info "test search"
       if search
         find(:all, :conditions => ['ten_benh_nhan LIKE ?', "%#{search}%"])
       else

@@ -2,4 +2,15 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  benhnhans:
+    home_page: "Home page"
+    introduction: "Introduction"
+    contact: "Contact"
+    add_more_patient: "Add more patient"
+    private_hospital: "Private hospital"
+    number: "Number"
+    names: "Name"
+    address: "Address"
+    phone_number: "Phone number"
+    disease: "Disease"
+    edit: "Edit"

@@ -2,6 +2,12 @@ class BenhnhansController < ApplicationController
   
   def index
     @benhnhans = Benhnhan.search(params[:search])
+    if !session[:language]
+      session[:language]= "en"
+      
+    elsif params[:language]
+      session[:language] = params[:language]
+    end
   end
 
   def create
