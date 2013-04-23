@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
     Rails.logger.info "test #{params[:language]}"
     I18n.locale = session[:language] 
   end
+  
 end
 
 

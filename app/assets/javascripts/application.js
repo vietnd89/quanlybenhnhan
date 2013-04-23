@@ -14,10 +14,12 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
 $(function() {
 	$("#search_bn input").keyup(function() {
 		$.get($("#search_bn").attr("action"), $("#search_bn").serialize(), null, "script");
 		return false;
 	});
+	
 });
 

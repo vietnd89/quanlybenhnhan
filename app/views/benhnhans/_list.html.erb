@@ -1,3 +1,7 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<%= paginate @benhnhans_paging %>
+
 <div class="btn" style="float: right">
 	<a href="/benhnhans/new"><%= t('add_more_patient')%></a>
 </div>
@@ -8,18 +12,18 @@
 <%else%>
 <table class="table table-hover">
 	<tr >
-		<th><%= t ('numbers')%></th>
-		<th> <%= t ('name')%> </th>
-		<th> <%= t ('address')%></th>
-		<th><%= t ('phone_number')%> </th>
-		<th> <%= t ('disease')%> </th>
+		<th><a href="#">id</a></th>
+		<th><%= sortable "ten_benh_nhan",t('names')%></th>
+		<th><%= sortable "dia_chi", t('address')%></th>
+		<th><%= sortable "so_dien_thoai",t('phone_number') %></th>
+		<th><%= sortable "benh_an", "Benh an" %></th>
 		<th colspan="2"><%= t ('edit')%></th>
 
 	</tr>
 
-	<% @benhnhans.each do |benhnhans|%>
+	<% @benhnhans.each_with_index do |benhnhans,index|%>
 	<tr class="success">
-		<td> <%= benhnhans.id%> </td>
+		<td> <%= index +1%> </td>
 		<td> <%= benhnhans.ten_benh_nhan%> </td>
 		<td> <%= benhnhans.dia_chi%>  </td/> <td> <%= benhnhans.so_dien_thoai%> </td>
 		<td> <%= benhnhans.benh_an%> </td>

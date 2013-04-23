@@ -14,3 +14,8 @@ en:
     phone_number: "Phone number"
     disease: "Disease"
     edit: "Edit"
+  views:
+    pagination:
+      previous: "&lt; Previous"
+      next: "Next &gt;"
+      truncate: "..."

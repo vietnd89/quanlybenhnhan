@@ -1,13 +1,13 @@
 class BenhnhansController < ApplicationController
-  
   def index
-    @benhnhans = Benhnhan.search(params[:search])
+    @benhnhans_paging = Benhnhan.page(params[:page]).per(10)
+    @benhnhans = @benhnhans_paging.order(sort_column + ' ' + sort_direction).search(params[:search])
+    
     if !session[:language]
-      session[:language]= "en"
-      
+      session[:language]= "en"     
     elsif params[:language]
       session[:language] = params[:language]
-    end
+    end 
   end
 
   def create
@@ -41,5 +41,17 @@ class BenhnhansController < ApplicationController
       end
     end
   end
-
+ 
+  
+   private
+  def sort_column
+    params[:sort] || "ten_benh_nhan"
+  end
+  
+  def sort_direction
+    params[:direction] || "asc"
+  end
+  
+  
+  
 end
